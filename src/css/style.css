@@ -57,6 +57,7 @@ main {
     margin: 0 auto;
     border: 1px solid grey;
     border-radius: 7px;
+    outline-color: hotpink;
 }
 
 .container header .btn-search {
