@@ -11,6 +11,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 10px;
 }
 
 .devicon-github-original {
@@ -82,6 +83,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 40px;
+}
+
+.container .profile-data .error-msg {
+    color: red;
+    font-size: 19px;
+    font-weight: 500;
+    margin: -20px 0 20px;
 }
 
 .container .profile-data .info {
@@ -90,27 +99,32 @@ main {
     align-items: center;
 }
 
-.container .profile-data .info .data {
-    width: 50%;
-    padding: 40px;
-}
-
 .container .profile-data .info img {
     width: 50%;
     border: 10px solid hotpink;
     border-radius: 50%;
 }
 
-.container .profile-data .info h1 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 20px;
+.container .profile-data .info .data {
+    width: 50%;
+    padding: 40px;
 }
 
-.container .profile-data .info p {
+.container .profile-data .info .data h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.container .profile-data .info .data p {
     font-size: 15px;
     font-weight: 400;
     line-height: 23px;
+    margin-bottom: 25px;
+}
+
+.container .profile-data .info .data ul li:not(:last-child) {
+    margin-bottom: 7px;
 }
 
 .container .profile-data .repositories h2 {
