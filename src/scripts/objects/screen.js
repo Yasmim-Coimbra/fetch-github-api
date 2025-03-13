@@ -18,7 +18,7 @@ const screen = {
 		if (repos.length > 0) {
 			this.profileData.innerHTML += `<div class="repositories section">
         <h2>Repositórios</h2>
-        <ul>${repos.map((repo) => `<li><a target="_blank" href="${repo.html_url}">${repo.name}</a></li>`).join("")}</ul>
+        <ul>${repos.map((repo) => `<li><a target="_blank" href="${repo.html_url}">${repo.name}</a></li>`)}</ul>
         </div>`;
 		}
 	},
@@ -30,20 +30,37 @@ const screen = {
 		this.profileData.innerHTML = `
         <h2 class="error-msg">Por favor, digite o nome do usuário no GitHub antes de buscá-lo.</h2>`;
 	},
-    renderEvents(events) {
-        if (events.length === 0) {
-            this.profileData.innerHTML += `<div class="events section">
+	renderEvents(events) {
+		this.profileData.innerHTML += `<div class="events section">
             <h2>Eventos</h2>
-            <p>Usuário não possui nenhuma atividade recente.</p>
+            <ul id="events-list"></ul>
             </div>`;
-            return;
-        }
+		const eventsList = this.profileData.querySelector("#events-list");
 
-        this.profileData.innerHTML += `<div class="events section">
-        <h2>Eventos</h2>
-        <ul>${events.map((event) => `<li><strong>${event.repo.name}</strong> - ${event.payload.commits[0].message}</li>`).join("")}</ul>
-        </div>`;
-    }
+		if (events.length === 0) {
+			const p = document.createElement("p");
+			p.textContent = "Este usuário não possui nenhuma atividade recente.";
+			eventsList.replaceWith(p);
+			return;
+		}
+
+		for (const event of events) {
+			const li = document.createElement("li");
+			const strong = document.createElement("strong");
+			strong.textContent = event.repo.name;
+
+			li.appendChild(strong);
+			li.appendChild(
+				document.createTextNode(
+					event.type === "PushEvent"
+						? ` - ${event.payload.commits[0].message}`
+						: " - Sem mensagem de commit",
+				),
+			);
+
+			eventsList.appendChild(li);
+		}
+	},
 };
 
 export { screen };
