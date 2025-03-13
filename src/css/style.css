@@ -138,8 +138,9 @@ main {
     flex-wrap: wrap;
 }
 
-.container .profile-data .repositories ul li a {
+.container .profile-data .repositories ul li {
     display: block;
+    cursor: pointer;
     padding: 20px;
     margin: 20px;
     border: 1px solid grey;
@@ -147,8 +148,15 @@ main {
     transition: 0.3s ease-in-out;
 }
 
-.container .profile-data .repositories ul li a:hover {
+.container .profile-data .repositories ul li:hover {
     background-color: hotpink;
+}
+
+.container .profile-data .repositories ul li a {
+    transition: 0.3s ease-in-out;
+}
+
+.container .profile-data .repositories ul li:hover a {
     color: #ffffff;
 }
 
