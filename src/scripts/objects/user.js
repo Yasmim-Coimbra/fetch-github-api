@@ -7,6 +7,7 @@ const userData = {
     following: 0,
     repositoriesQuantity: 0,
     repositories: [],
+    events: [],
     setInfo(githubUser) {
         this.avatarUrl = githubUser.avatar_url;
         this.name = githubUser.name;
@@ -18,6 +19,9 @@ const userData = {
     },
     setRepositories(repos) {
         this.repositories = repos;
+    },
+    setEvents(events) {
+        this.events = events;
     }
 }
 

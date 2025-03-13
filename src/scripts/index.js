@@ -34,8 +34,11 @@ async function getUserData() {
 
 	const repos = await getRepos();
 
+	const events = await getEvents();
+
 	userData.setInfo(user);
 	userData.setRepositories(repos);
+	userData.setEvents(events);
 
 	return user;
 }
