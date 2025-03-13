@@ -156,6 +156,22 @@ main {
     transition: 0.3s ease-in-out;
 }
 
+.container .profile-data .repositories ul li a .repo-description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.container .profile-data .repositories ul li a .repo-description .info {
+    background-color: #695AC9;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 7px;
+}
+
 .container .profile-data .repositories ul li:hover a {
     color: #ffffff;
 }
