@@ -156,7 +156,7 @@ main {
     padding-top: 40px;
 }
 
-.container .profile-data .events p {
+.container .profile-data .events p, .container .profile-data .repositories p {
     font-size: 18px;
     font-weight: 400;
 }

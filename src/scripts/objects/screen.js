@@ -1,25 +1,42 @@
 const screen = {
 	profileData: document.querySelector(".profile-data"),
 	renderUser(user) {
-		this.profileData.innerHTML = `<div class="info">
-                                <img src="${user.avatarUrl}" alt="Foto do perfil de ${user.name}">
-                                <div class="data">
-                                    <h1>${user.name ?? "Não posssui nome cadastrado"}</h1>
-                                    <p>${user.bio ?? "Nenhuma biografia cadastrada"}</p>
-                                    <ul>
-                                        <li>Seguidores: ${user.followers}</li>
-                                        <li>Seguindo: ${user.following}</li>
-                                        <li>Repositórios: ${user.repositoriesQuantity}</li>
-                                    </ul>
-                                </div>
-                            </div>`;
+		this.profileData.innerHTML = 
+		`<div class="info">
+            <img src="${user.avatarUrl}" alt="Foto do perfil de ${user.name}">
+            <div class="data">
+                <h1>${user.name ?? "Não posssui nome cadastrado"}</h1>
+                <p>${user.bio ?? "Nenhuma biografia cadastrada"}</p>
+                <ul>
+                    <li>Seguidores: ${user.followers}</li>
+                    <li>Seguindo: ${user.following}</li>
+                    <li>Repositórios: ${user.repositoriesQuantity}</li>
+                </ul>
+            </div>
+        </div>`;
 	},
 	renderRepositories(repos) {
-		if (repos.length > 0) {
-			this.profileData.innerHTML += `<div class="repositories section">
-        <h2>Repositórios</h2>
-        <ul>${repos.map((repo) => `<li><a target="_blank" href="${repo.html_url}">${repo.name}</a></li>`)}</ul>
-        </div>`;
+		this.profileData.innerHTML += 
+		`<div class="repositories section">
+			<h2>Repositórios</h2>
+			<ul id="repos-list"></ul>
+		</div>`;
+		const reposList = this.profileData.querySelector("#repos-list");
+
+		if (repos.length === 0) {
+			const p = document.createElement("p");
+			p.textContent = "Este usuário ainda não possui nenhum repositório.";
+			reposList.replaceWith(p);
+			return;
+		}
+
+		for (const repo of repos) {
+			const li = document.createElement("li");
+			const a = document.createElement("a");
+			a.href = repo.html_url;
+			a.textContent = repo.name;
+			li.appendChild(a);
+			reposList.appendChild(li);
 		}
 	},
 	renderNotFound() {
@@ -31,10 +48,11 @@ const screen = {
         <h2 class="error-msg">Por favor, digite o nome do usuário no GitHub antes de buscá-lo.</h2>`;
 	},
 	renderEvents(events) {
-		this.profileData.innerHTML += `<div class="events section">
+		this.profileData.innerHTML += 
+		`<div class="events section">
             <h2>Eventos</h2>
             <ul id="events-list"></ul>
-            </div>`;
+        </div>`;
 		const eventsList = this.profileData.querySelector("#events-list");
 
 		if (events.length === 0) {
