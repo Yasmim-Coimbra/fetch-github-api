@@ -50,4 +50,5 @@ async function showUserData() {
 
 	screen.renderUser(userData);
 	screen.renderRepositories(userData.repositories);
+	screen.renderEvents(userData.events);
 }

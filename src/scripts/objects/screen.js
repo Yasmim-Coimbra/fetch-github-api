@@ -30,6 +30,20 @@ const screen = {
 		this.profileData.innerHTML = `
         <h2 class="error-msg">Por favor, digite o nome do usuário no GitHub antes de buscá-lo.</h2>`;
 	},
+    renderEvents(events) {
+        if (events.length === 0) {
+            this.profileData.innerHTML += `<div class="events section">
+            <h2>Eventos</h2>
+            <p>Usuário não possui nenhuma atividade recente.</p>
+            </div>`;
+            return;
+        }
+
+        this.profileData.innerHTML += `<div class="events section">
+        <h2>Eventos</h2>
+        <ul>${events.map((event) => `<li><strong>${event.repo.name}</strong> - ${event.payload.commits[0].message}</li>`).join("")}</ul>
+        </div>`;
+    }
 };
 
 export { screen };
