@@ -7,6 +7,20 @@ import { screen } from "./objects/screen.js";
 export const searchInput = document.querySelector("#input-search");
 const searchButton = document.querySelector("#btn-search");
 
+searchButton.addEventListener("click", (event) => {
+	event.preventDefault();
+
+	if (validateEmptyInput()) return;
+	showUserData();
+});
+
+searchInput.addEventListener("keyup", (event) => {
+	if (event.key === "Enter") {
+		if (validateEmptyInput()) return;
+		showUserData();
+	}
+});
+
 function validateEmptyInput() {
 	if (searchInput.value === "") {
 		screen.renderNotWritten();
