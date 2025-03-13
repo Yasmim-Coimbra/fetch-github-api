@@ -34,7 +34,14 @@ const screen = {
 			const li = document.createElement("li");
 			const a = document.createElement("a");
 			a.href = repo.html_url;
-			a.textContent = repo.name;
+			a.innerHTML = 
+			`<p>${repo.name}</p>
+			<div class="repo-description">
+				<span class="info">🍴${repo.forks}</span>
+				<span class="info">⭐ ${repo.stargazers_count}</span>
+				<span class="info">👀 ${repo.watchers}</span>
+				<span class="info">🧑‍💻 ${repo.language ?? "Nenhuma linguagem detectada"}</span>
+			</div>`;
 			li.appendChild(a);
 			reposList.appendChild(li);
 		}
