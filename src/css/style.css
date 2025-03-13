@@ -152,9 +152,17 @@ main {
     color: #ffffff;
 }
 
+.container .profile-data .events {
+    padding-top: 40px;
+}
+
 .container .profile-data .events p {
     font-size: 18px;
     font-weight: 400;
+}
+
+.container .profile-data .events ul li:not(:last-child) {
+    margin-bottom: 15px;
 }
 
 .container .profile-data.hide {
