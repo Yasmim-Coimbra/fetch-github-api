@@ -36,159 +36,167 @@ main {
     border-radius: 30px;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
-}
 
-.container header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 0;
-}
+    header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px 0;
 
-.container header h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
 
-.container header .input-search {
-    width: 400px;
-    font-size: 17px;
-    padding: 10px;
-    margin: 0 auto;
-    border: 1px solid grey;
-    border-radius: 7px;
-    outline-color: hotpink;
-}
+        .input-search {
+            width: 400px;
+            font-size: 17px;
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid grey;
+            border-radius: 7px;
+            outline-color: hotpink;
+        }
 
-.container header .btn-search {
-    cursor: pointer;
-    width: 200px;
-    font-size: 17px;
-    margin: 20px auto 0;
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid grey;
-    transition: 0.3s ease-in-out;
-}
+        .btn-search {
+            cursor: pointer;
+            width: 200px;
+            font-size: 17px;
+            margin: 20px auto 0;
+            padding: 10px;
+            border-radius: 7px;
+            border: 1px solid grey;
+            transition: 0.3s ease-in-out;
 
-.container header .btn-search:hover {
-    background-color: hotpink;
-    color: #ffffff;
-    border-color: #ffffff;
-}
+            &:hover {
+                background-color: hotpink;
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+        }
+    }
 
+    .profile-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
 
-.container .profile-data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-}
+        &.hide {
+            display: none;
+        }
 
-.container .profile-data .error-msg {
-    color: red;
-    font-size: 19px;
-    font-weight: 500;
-    margin: -20px 0 20px;
-}
+        .error-msg {
+            color: red;
+            font-size: 19px;
+            font-weight: 500;
+            margin: -20px 0 20px;
+        }
 
-.container .profile-data .info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
 
-.container .profile-data .info img {
-    width: 50%;
-    border: 10px solid hotpink;
-    border-radius: 50%;
-}
+            img {
+                width: 50%;
+                border: 10px solid hotpink;
+                border-radius: 50%;
+            }
 
-.container .profile-data .info .data {
-    width: 50%;
-    padding: 40px;
-}
+            .data {
+                width: 50%;
+                padding: 40px;
 
-.container .profile-data .info .data h1 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
+                h1 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                }
 
-.container .profile-data .info .data p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 23px;
-    margin-bottom: 25px;
-}
+                p {
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    margin-bottom: 25px;
+                }
 
-.container .profile-data .info .data ul li:not(:last-child) {
-    margin-bottom: 7px;
-}
+                ul li:not(:last-child) {
+                    margin-bottom: 7px;
+                }
+            }
+        }
 
-.container .profile-data .repositories h2, .container .profile-data .events h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .repositories,
+        .events {
+            h2 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
 
-.container .profile-data .repositories ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+            p {
+                font-size: 18px;
+                font-weight: 400;
+            }
+        }
 
-.container .profile-data .repositories ul li {
-    display: block;
-    cursor: pointer;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid grey;
-    border-radius: 7px;
-    transition: 0.3s ease-in-out;
-}
+        .repositories {
+            ul {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
 
-.container .profile-data .repositories ul li:hover {
-    background-color: hotpink;
-}
+                li {
+                    display: block;
+                    cursor: pointer;
+                    padding: 20px;
+                    margin: 20px;
+                    border: 1px solid grey;
+                    border-radius: 7px;
+                    transition: 0.3s ease-in-out;
 
-.container .profile-data .repositories ul li a {
-    transition: 0.3s ease-in-out;
-}
+                    &:hover {
+                        background-color: hotpink;
 
-.container .profile-data .repositories ul li a .repo-description {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    gap: 10px;
-}
+                        a {
+                            color: #ffffff;
+                        }
+                    }
 
-.container .profile-data .repositories ul li a .repo-description .info {
-    background-color: #695AC9;
-    color: #ffffff;
-    padding: 5px;
-    border-radius: 7px;
-}
+                    a {
+                        transition: 0.3s ease-in-out;
 
-.container .profile-data .repositories ul li:hover a {
-    color: #ffffff;
-}
+                        .repo-description {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                            padding-top: 10px;
+                            gap: 10px;
 
-.container .profile-data .events {
-    padding-top: 40px;
-}
+                            .info {
+                                background-color: #695AC9;
+                                color: #ffffff;
+                                padding: 5px;
+                                border-radius: 7px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-.container .profile-data .events p, .container .profile-data .repositories p {
-    font-size: 18px;
-    font-weight: 400;
-}
+        .events {
+            padding-top: 40px;
 
-.container .profile-data .events ul li:not(:last-child) {
-    margin-bottom: 15px;
-}
-
-.container .profile-data.hide {
-    display: none;
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
