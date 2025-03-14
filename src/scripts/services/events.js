@@ -1,9 +1,9 @@
-import { baseUrl, shownRepositoriesQuantity } from "../variables.js";
+import { baseUrl, defaultShownQuantity } from "../variables.js";
 import { searchInput } from "../index.js";
 
 async function getEvents() {
     const userName = searchInput.value;
-    const url = `${baseUrl}${userName}/events?per_page=${shownRepositoriesQuantity}`;
+    const url = `${baseUrl}${userName}/events?per_page=${defaultShownQuantity}`;
 
     try {
         const response = await fetch(url);

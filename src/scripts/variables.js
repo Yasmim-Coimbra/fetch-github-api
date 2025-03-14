@@ -1,4 +1,4 @@
 const baseUrl = "https://api.github.com/users/";
-const shownRepositoriesQuantity = 10;
+const defaultShownQuantity = 10;
 
-export { baseUrl, shownRepositoriesQuantity };
+export { baseUrl, defaultShownQuantity };
