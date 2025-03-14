@@ -18,10 +18,13 @@
 @media (max-width: 768px) {
     .container {
         header {
-
-            .input-search,
-            .btn-search {
+            form {
                 width: 100%;
+                .input-search,
+                .btn-search {
+                    width: 100%;
+                }
+
             }
         }
     }

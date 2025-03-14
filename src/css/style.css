@@ -38,9 +38,6 @@ main {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
 
     header {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         padding: 30px 0;
 
         h2 {
@@ -49,30 +46,36 @@ main {
             margin-bottom: 30px;
         }
 
-        .input-search {
-            width: 400px;
-            font-size: 17px;
-            padding: 10px;
-            margin: 0 auto;
-            border: 1px solid grey;
-            border-radius: 7px;
-            outline-color: hotpink;
-        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        .btn-search {
-            cursor: pointer;
-            width: 200px;
-            font-size: 17px;
-            margin: 20px auto 0;
-            padding: 10px;
-            border-radius: 7px;
-            border: 1px solid grey;
-            transition: 0.3s ease-in-out;
+            .input-search {
+                width: 400px;
+                font-size: 17px;
+                padding: 10px;
+                margin: 0 auto;
+                border: 1px solid grey;
+                border-radius: 7px;
+                outline-color: hotpink;
+            }
 
-            &:hover {
-                background-color: hotpink;
-                color: #ffffff;
-                border-color: #ffffff;
+            .btn-search {
+                cursor: pointer;
+                width: 200px;
+                font-size: 17px;
+                margin: 20px auto 0;
+                padding: 10px;
+                border-radius: 7px;
+                border: 1px solid grey;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: hotpink;
+                    color: #ffffff;
+                    border-color: #ffffff;
+                }
             }
         }
     }
