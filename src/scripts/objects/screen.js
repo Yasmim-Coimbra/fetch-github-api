@@ -79,7 +79,7 @@ const screen = {
 				document.createTextNode(
 					event.type === "PushEvent"
 						? ` - ${event.payload.commits[0].message}`
-						: " - Sem mensagem de commit",
+						: " - Criado o repositório",
 				),
 			);
 
